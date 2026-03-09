@@ -1,7 +1,7 @@
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
-
+//updated uc3 file after pr rejection
         String input = "level";
         String reversed = "";
 
