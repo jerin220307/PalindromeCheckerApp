@@ -1,17 +1,25 @@
+import java.util.Scanner;
+
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
-//updated uc3 file after pr rejection
-        String input = "level";
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter text: ");
+        String input = sc.nextLine();
+
         String reversed = "";
 
         for(int i=input.length()-1;i>=0;i--){
             reversed += input.charAt(i);
         }
 
-        boolean isPalindrome = input.equals(reversed);
+        if(input.equals(reversed))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
 
-        System.out.println("Input: " + input);
-        System.out.println("Palindrome: " + isPalindrome);
+        sc.close();
     }
 }
