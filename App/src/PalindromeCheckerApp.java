@@ -4,6 +4,9 @@ public class PalindromeCheckerApp {
 
     public static boolean isPalindrome(String word) {
 
+        word = word.toLowerCase();
+        word = word.replaceAll("[^a-z0-9]", "");
+
         int start = 0;
         int end = word.length() - 1;
 
