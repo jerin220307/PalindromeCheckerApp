@@ -3,34 +3,33 @@ import java.util.Scanner;
 public class PalindromeCheckerApp {
 
     public static boolean isPalindrome(String word) {
-        String reversed = new StringBuilder(word).reverse().toString();
-        return word.equalsIgnoreCase(reversed);
+
+        int start = 0;
+        int end = word.length() - 1;
+
+        while(start < end) {
+
+            if(word.charAt(start) != word.charAt(end))
+                return false;
+
+            start++;
+            end--;
+        }
+
+        return true;
     }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int choice;
 
-        do {
-            System.out.println("1. Check Palindrome");
-            System.out.println("2. Exit");
-            System.out.print("Enter choice: ");
+        System.out.print("Enter text: ");
+        String input = sc.nextLine();
 
-            choice = sc.nextInt();
-            sc.nextLine();
-
-            if(choice == 1) {
-                System.out.print("Enter word: ");
-                String input = sc.nextLine();
-
-                if(isPalindrome(input))
-                    System.out.println("Palindrome");
-                else
-                    System.out.println("Not Palindrome");
-            }
-
-        } while(choice != 2);
+        if(isPalindrome(input))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
 
         sc.close();
     }
