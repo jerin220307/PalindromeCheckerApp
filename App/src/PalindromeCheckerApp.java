@@ -1,1 +1,1 @@
-input = input.replaceAll(" ", "");
+String reversed = new StringBuilder(input).reverse().toString();
