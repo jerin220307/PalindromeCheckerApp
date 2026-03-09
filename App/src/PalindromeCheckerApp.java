@@ -10,17 +10,27 @@ public class PalindromeCheckerApp {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        int choice;
 
-        for(int i = 1; i <= 3; i++) {
+        do {
+            System.out.println("1. Check Palindrome");
+            System.out.println("2. Exit");
+            System.out.print("Enter choice: ");
 
-            System.out.print("Enter word: ");
-            String input = sc.nextLine();
+            choice = sc.nextInt();
+            sc.nextLine();
 
-            if(isPalindrome(input))
-                System.out.println("Palindrome");
-            else
-                System.out.println("Not Palindrome");
-        }
+            if(choice == 1) {
+                System.out.print("Enter word: ");
+                String input = sc.nextLine();
+
+                if(isPalindrome(input))
+                    System.out.println("Palindrome");
+                else
+                    System.out.println("Not Palindrome");
+            }
+
+        } while(choice != 2);
 
         sc.close();
     }
