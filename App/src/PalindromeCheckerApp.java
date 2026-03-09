@@ -1,1 +1,1 @@
-String reversed = new StringBuilder(input).reverse().toString();
+input = input.replaceAll("[^a-zA-Z0-9]", "");
